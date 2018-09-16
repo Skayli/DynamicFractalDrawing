@@ -53,7 +53,7 @@
 				<span class="fraktalForm-desc" id="zoomLevelDisplay">X<span id="rangeValue">1</span></span>
 			</div>
 			<div class="w3-container">
-				<input class="w3-input fraktalForm-input" type="range" min="0.5" max="10" value="1" name="zoomLevel" id="zoomLevel" step="0.5" />
+				<input class="w3-input fraktalForm-input" type="range" min="0.5" max="10" value="1" name="zoomLevel" id="zoomLevel" step="0.1" />
 			</div>
 
 			<!-- Partie réel du complexe -->

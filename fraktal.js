@@ -22,7 +22,6 @@ $(document).ready(function() {
 
 	generatePalette();
 
-
 	//----------------------------------------//
 
 	$("#zoomLevel").on('input', function() {
@@ -32,6 +31,7 @@ $(document).ready(function() {
 	$("#fraktalForm").submit(function(e) {
 		e.preventDefault();
 
+		$("#fraktalForm").css("opacity", 0.2);
 		$(".fraktalIntro").hide();
 		$(".fraktalCanvas").hide();
 		$(".fraktalLoading").show();
@@ -102,6 +102,7 @@ function dessinerFractale() {
 
 	$(".fraktalCanvas").show();
 	$("#btn-dl").show();
+	$("#fraktalForm").css("opacity", 1);
 	$(".fraktalLoading").hide();
 
 }
