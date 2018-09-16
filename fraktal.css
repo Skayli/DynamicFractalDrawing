@@ -5,7 +5,7 @@ body {
 }
 
 *:focus {
-    outline: 0 !important;
+    outline: 0!important;
 }
 
 .fraktalContent {
@@ -66,6 +66,11 @@ body {
 	margin: auto;
 }
 
-#btn-draw {
+#btn-draw, #btn-dl {
 	width:100%;
+	font-weight: bold;
+}
+
+#btn-dl {
+	display: none;
 }

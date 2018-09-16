@@ -77,6 +77,10 @@
 				<button class="w3-btn w3-red" id="btn-draw">Tracer</button>
 			</div>
 
+			<div class="w3-margin-top">
+				<a class="w3-btn w3-teal" type="button" id="btn-dl">Télécharger</a>
+			</div>
+
 		</form>
 
 	</div>

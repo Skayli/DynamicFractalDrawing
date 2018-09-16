@@ -35,13 +35,24 @@ $(document).ready(function() {
 		$(".fraktalIntro").hide();
 		$(".fraktalCanvas").hide();
 		$(".fraktalLoading").show();
+		$("#btn-dl").hide();
 
 		getUserValues();
 
 		setTimeout(dessinerFractale, 10);
 	});
 
+	$("#btn-dl").click(function() {
+		console.log("ckucj");
+		downloadCanvas(this, "canvas", "Fraktal (" + complex.re + " - " + complex.im + ").png");
+	})
+
 });
+
+function downloadCanvas(link, canvasId, filename) {
+    link.href = document.getElementById(canvasId).toDataURL();
+    link.download = filename;
+}
 
 function generatePalette() {
     // Calculate a gradient
@@ -90,6 +101,7 @@ function dessinerFractale() {
 
 
 	$(".fraktalCanvas").show();
+	$("#btn-dl").show();
 	$(".fraktalLoading").hide();
 
 }
