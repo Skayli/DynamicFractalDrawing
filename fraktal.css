@@ -1,0 +1,71 @@
+body {
+	background-color: rgb(30, 30, 30);
+	width: 1200px;
+	margin: auto;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+.fraktalContent {
+	width: 1207px;
+	height: 607px;
+	border: 3px solid white;
+	margin: auto;
+	position: relative;
+}
+
+.title {
+	font-weight: bold;
+}
+
+.fraktalIntro, .fraktalLoading {
+	background-image: linear-gradient(rgb(30, 30, 30), red, yellow, rgb(30, 30, 30));
+}
+
+.fraktalIntro, .fraktalLoading {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.fraktalCanvas, .fraktalLoading {
+	display: none;
+}
+
+
+#welcomeTitle {
+	font-weight: bold;
+}
+
+.fraktalForm {
+	width: 1200px;
+	margin: auto;
+}
+
+.fraktalForm-desc {
+	color: white;
+	font-weight: bold;
+	margin:auto;
+}
+
+.w3-half {
+    padding-bottom: 100px;
+    margin-bottom: -100px;
+}
+
+
+#zoomLevelDisplay {
+	float: right;
+}
+
+.fraktalForm-input {
+	margin: auto;
+}
+
+#btn-draw {
+	width:100%;
+}
