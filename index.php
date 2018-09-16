@@ -20,7 +20,7 @@
 	<div class="w3-container fraktalDrawing">
 		<div class="fraktalContent">
 			<!-- Message d'introduction du site -->
-			<div class="fraktalIntro">
+			<div class="w3-container w3-text-white fraktalIntro">
 				<h2 class="w3-center" id="welcomeTitle">Bienvenue sur Fraktal with style</h2>
 				<p>
 					Ici, il faut décrire ce que les gens peuvent faire avec le form en dessous :D
@@ -33,7 +33,7 @@
 			</div>
 
 			<!-- Message de loading -->
-			<div class="w3-container fraktalLoading">
+			<div class="w3-container w3-text-white fraktalLoading">
 				<h2 class="w3-center" id="welcomeTitle">Dessin de la fractal en cours</h2>
 				<p>
 					Veuillez patienter
