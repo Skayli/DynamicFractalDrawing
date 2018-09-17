@@ -5,6 +5,8 @@ var canvas, canvasWidth, canvasHeight, ctx;
 var complex;
 var nbIterations;
 var palette;
+var i, j;
+var currentCompletion;
 
 $(document).ready(function() {
 	canvas = document.getElementById('canvas');
@@ -29,6 +31,10 @@ $(document).ready(function() {
 	})
 
 	$("#fraktalForm").submit(function(e) {
+		i = 0;
+		j = 0;
+		currentCompletion = 0;
+
 		e.preventDefault();
 
 		$("#fraktalForm").css("opacity", 0.2);
@@ -43,7 +49,6 @@ $(document).ready(function() {
 	});
 
 	$("#btn-dl").click(function() {
-		console.log("ckucj");
 		downloadCanvas(this, "canvas", "Fraktal (" + complex.re + " - " + complex.im + ").png");
 	})
 
@@ -92,18 +97,59 @@ function getUserValues() {
 	complex = math.complex(reel, imaginaire);
 }
 
+function sleep(miliseconds) {
+   var currentTime = new Date().getTime();
+
+   while (currentTime + miliseconds >= new Date().getTime()) {
+   }
+}
+
+function updateLoadingBar() {
+	$("#loadingBar").width(Math.floor(i/canvas.width*100) + "%");
+}
+
 function dessinerFractale() {
-	for(i = 0; i < canvas.width; i++) {;
-		for(j = 0; j < canvas.height; j++) {
-			colorPixel(ctx, i, j);
-		}
+	colorPixel(ctx, defineColorForPixel(i, j, complex), i, j);
+	j++;
+
+	if(j == canvas.height) {
+		j = 0;
+		i++;
 	}
 
+	if(i == canvas.width) {
+		$(".fraktalCanvas").show();
+		$("#btn-dl").show();
+		$("#fraktalForm").css("opacity", 1);
+		$(".fraktalLoading").hide();
+		console.log("finish");
+		return;
+	}
 
-	$(".fraktalCanvas").show();
-	$("#btn-dl").show();
-	$("#fraktalForm").css("opacity", 1);
-	$(".fraktalLoading").hide();
+	if(currentCompletion < Math.floor(i/canvas.width*100)) {
+		setTimeout(function() {
+			currentCompletion = Math.floor(i/canvas.width*100);
+			updateLoadingBar();
+			dessinerFractale();
+		}, 0)
+	} else {
+		dessinerFractale();
+	}
+	// for(i = 0; i < canvas.width; i++) {
+	// 	if(i/canvas.width*100 % 1 == 1) {
+	// 		updateLoadingBar();
+	// 		sleep(500);
+	// 	}
+	// 	for(j = 0; j < canvas.height; j++) {
+	// 		colorPixel(ctx, i, j);
+	// 	}
+	// }
+	//
+	//
+	// $(".fraktalCanvas").show();
+	// $("#btn-dl").show();
+	// $("#fraktalForm").css("opacity", 1);
+	// $(".fraktalLoading").hide();
 
 }
 
@@ -111,8 +157,7 @@ function moduleComplex(complex) {
 	return math.sqrt(math.multiply(complex.re, complex.re) + math.multiply(complex.im, complex.im));
 }
 
-function colorPixel(ctx, x, y) {
-	let color = defineColorForPixel(x, y, complex)
+function colorPixel(ctx, color, x, y) {
 	ctx.fillStyle = color;
 	ctx.fillRect(x, y, 1, 1);
 }
