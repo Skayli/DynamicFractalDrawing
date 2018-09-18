@@ -38,6 +38,7 @@
 				<p>
 					Veuillez patienter
 				</p>
+				<span id="pcentCompletion" style="float:left">0</span>%
 				<div class="w3-light-grey">
 					<div id="loadingBar" class="w3-container animated-gradient" style="height:24px;width:0%;"></div>
 				</div>
@@ -53,7 +54,7 @@
 				<span class="fraktalForm-desc" id="zoomLevelDisplay">X<span id="rangeValue">1</span></span>
 			</div>
 			<div class="w3-container">
-				<input class="w3-input fraktalForm-input" type="range" min="0.5" max="10" value="1" name="zoomLevel" id="zoomLevel" step="0.1" />
+				<input class="w3-input fraktalForm-input" type="range" min="1" max="2000" value="1" name="zoomLevel" id="zoomLevel" step="1" />
 			</div>
 
 			<!-- Partie réel du complexe -->

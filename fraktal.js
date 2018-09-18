@@ -19,7 +19,7 @@ $(document).ready(function() {
 	defaultyMin = -1.5;
 	defaultyMax = 1.5;
 
-	nbIterations = 100;
+	nbIterations = 200;
 	palette = [];
 
 	generatePalette();
@@ -44,6 +44,7 @@ $(document).ready(function() {
 		$("#btn-dl").hide();
 
 		getUserValues();
+		updateLoadingBar(0);
 
 		setTimeout(dessinerFractale, 10);
 	});
@@ -97,15 +98,9 @@ function getUserValues() {
 	complex = math.complex(reel, imaginaire);
 }
 
-function sleep(miliseconds) {
-   var currentTime = new Date().getTime();
-
-   while (currentTime + miliseconds >= new Date().getTime()) {
-   }
-}
-
-function updateLoadingBar() {
-	$("#loadingBar").width(Math.floor(i/canvas.width*100) + "%");
+function updateLoadingBar(pcent) {
+	$("#loadingBar").width(pcent + "%");
+	$("#pcentCompletion").html(pcent);
 }
 
 function dessinerFractale() {
@@ -128,7 +123,7 @@ function dessinerFractale() {
 	if(currentCompletion < Math.floor(i/canvas.width*100)) {
 		setTimeout(function() {
 			currentCompletion = Math.floor(i/canvas.width*100);
-			updateLoadingBar();
+			updateLoadingBar(currentCompletion);
 			dessinerFractale();
 		}, 0)
 	} else {
