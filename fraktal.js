@@ -122,7 +122,6 @@ function dessinerFractale() {
 		$("#btn-dl").show();
 		$("#fraktalForm").css("opacity", 1);
 		$(".fraktalLoading").hide();
-		console.log("finish");
 		return;
 	}
 
@@ -135,22 +134,6 @@ function dessinerFractale() {
 	} else {
 		dessinerFractale();
 	}
-	// for(i = 0; i < canvas.width; i++) {
-	// 	if(i/canvas.width*100 % 1 == 1) {
-	// 		updateLoadingBar();
-	// 		sleep(500);
-	// 	}
-	// 	for(j = 0; j < canvas.height; j++) {
-	// 		colorPixel(ctx, i, j);
-	// 	}
-	// }
-	//
-	//
-	// $(".fraktalCanvas").show();
-	// $("#btn-dl").show();
-	// $("#fraktalForm").css("opacity", 1);
-	// $(".fraktalLoading").hide();
-
 }
 
 function moduleComplex(complex) {

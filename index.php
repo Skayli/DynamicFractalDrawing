@@ -39,7 +39,7 @@
 					Veuillez patienter
 				</p>
 				<div class="w3-light-grey">
-					<div id="loadingBar" class="w3-container w3-grey" style="height:24px;width:0%;"></div>
+					<div id="loadingBar" class="w3-container animated-gradient" style="height:24px;width:0%;"></div>
 				</div>
 			</div>
 		</div>

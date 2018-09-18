@@ -8,6 +8,12 @@ body {
     outline: 0!important;
 }
 
+.animated-gradient {
+  background: linear-gradient(to right, yellow, red);
+  background-size: 200% auto;
+  background-position: 0 100%;
+}
+
 .fraktalContent {
 	width: 1207px;
 	height: 607px;
